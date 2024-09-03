@@ -36,4 +36,4 @@ if 'code' in st.query_params:
         access_token = data['access_token']
         st.write("Login exitoso, token de acceso obtenido.")
     else:
-        st.write("Error al obtener el token de acceso")
+        st.write("Error al obtener el token de acceso")  

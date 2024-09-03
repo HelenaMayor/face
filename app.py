@@ -1,18 +1,14 @@
 import streamlit as st
 import requests
-import pickle
 
-# Cargar las credenciales de Facebook desde facebook.pkl
-with open('facebook.pkl', 'rb') as file:
-    facebook_config = pickle.load(file)
-
-app_id = facebook_config['app_id']
-app_secret = facebook_config['app_secret']
-redirect_uri = 'https://your-app-name.streamlitapp.com/callback'
+# Acceder a las variables de entorno desde streamlit.secrets
+app_id = st.secrets["APP_ID"]
+app_secret = st.secrets["APP_SECRET"]
+redirect_uri = st.secrets["REDIRECT_URI"]
 
 auth_url = (
     f"https://www.facebook.com/v20.0/dialog/oauth?"
-    f"client_id={app_id}&redirect_uri={redirect_uri}&scope=publish_video"
+    f"client_id={app_id}&redirect_uri={redirect_uri}&scope=public_profile"
 )
 
 # Botón para iniciar el proceso de autorización

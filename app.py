@@ -7,7 +7,7 @@ app_secret = st.secrets["APP_SECRET"]
 redirect_uri = "https://d5dzt7ecdm8lntbmvtn3oh.streamlit.app/"  
 auth_url = (
     f"https://www.facebook.com/v20.0/dialog/oauth?"
-    f"client_id={app_id}&redirect_uri={redirect_uri}&state="{st=state123abc,ds=123456789}"
+    f"client_id={app_id}&redirect_uri={redirect_uri}&state=\"{{st=state123abc,ds=123456789}}\""
 )
 
   

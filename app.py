@@ -7,10 +7,12 @@ app_secret = st.secrets["APP_SECRET"]
 redirect_uri = "https://d5dzt7ecdm8lntbmvtn3oh.streamlit.app/"  
 auth_url = (
     f"https://www.facebook.com/v20.0/dialog/oauth?"
-    f"client_id={app_id}&redirect_uri={redirect_uri}&state=\"{{st=state123abc,ds=123456789}}\""
+    f"client_id={app_id}&redirect_uri={redirect_uri}&scope=public_profile"
 )
-
-  
+https://www.facebook.com/v20.0/dialog/oauth?
+  client_id={app-id}
+  &redirect_uri={"https://www.domain.com/login"}
+  &state={"{st=state123abc,ds=123456789}"}
 if st.button("Login with Facebook"):
     st.write("Redirigiendo a Facebook para autenticación...")
     st.markdown(f"[Login con Facebook]({auth_url})", unsafe_allow_html=True)
